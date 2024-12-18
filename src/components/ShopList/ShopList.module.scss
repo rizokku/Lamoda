@@ -1,0 +1,83 @@
+.container {
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  @media (max-width: 650px) {
+    gap: 15px; /* Уменьшаем промежуток между карточками */
+  }
+
+  @media (max-width: 400px) {
+    gap: 10px; /* Еще меньше промежуток для очень узких экранов */
+  }
+}
+
+.shopItemCard {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  width: 220px;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  cursor: pointer;
+
+  @media (max-width: 650px) {
+    width: 180px; /* Уменьшаем ширину карточки для меньших экранов */
+  }
+
+  @media (max-width: 400px) {
+    width: 100%; /* На очень узких экранах карточки будут занимать всю ширину */
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+.shopItemCard:active {
+  transform: translateY(2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.description {
+  font-style: italic;
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.color,
+.price,
+.rating,
+.category {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+.price {
+  color: green;
+  font-weight: bold;
+}
+
+.rating {
+  color: gold;
+}
